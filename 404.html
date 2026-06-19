@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - الصفحة غير موجودة | إتقان ويب</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: radial-gradient(ellipse at 30% 50%, #0f2240 0%, #070f18 100%);
+      color: #f0f4f8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+    .container { max-width: 520px; }
+    .code {
+      font-size: clamp(5rem, 15vw, 9rem);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, #dfc073 0%, #fff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .sub {
+      font-size: 1.1rem;
+      color: rgba(240, 244, 248, 0.5);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 12px;
+      border: 1px solid rgba(223, 192, 115, 0.15);
+      background: rgba(10, 26, 49, 0.6);
+      backdrop-filter: blur(12px);
+      color: #dfc073;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      text-decoration: none;
+      transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: rgba(223, 192, 115, 0.12);
+      border-color: #dfc073;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      text-decoration: none;
+    }
+    .logo img { width: 40px; height: 40px; border-radius: 8px; }
+    .logo-text strong { display:block; font-size:1.05rem; color:#f0f4f8; }
+    .logo-text span { display:block; font-size:0.6rem; letter-spacing:0.15em; color:rgba(240,244,248,0.4); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="logo.png" alt="إتقان ويب" />
+      <div class="logo-text">
+        <strong>إتقان ويب</strong>
+        <span>ITQAN WEB</span>
+      </div>
+    </a>
+    <div class="code">404</div>
+    <p class="sub">عذراً، الصفحة التي تبحث عنها غير موجودة.<br />ربما تم نقلها أو حذفها.</p>
+    <a href="/" class="btn"><i class="fa-solid fa-house"></i> العودة للصفحة الرئيسية</a>
+  </div>
+</body>
+</html>

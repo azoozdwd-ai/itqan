@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://itqan-w3b.github.io/itqan-portfolio/sitemap.xml

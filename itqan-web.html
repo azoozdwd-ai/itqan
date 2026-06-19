@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إتقان ويب | Itqan Web — تصميم مواقع إلكترونية</title>
+  <meta name="description" content="إتقان ويب - شريكك الرقمي لتصميم المواقع الاحترافية مع تحسين SEO وخرائط جوجل." />
+
+  <!-- ========== OPEN GRAPH (للمشاركة على واتساب وتويتر والشبكات) ========== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="إتقان ويب" />
+  <meta property="og:title" content="إتقان ويب | Itqan Web — تصميم مواقع إلكترونية" />
+  <meta property="og:description" content="تصميم مواقع متكاملة وتهيئة SEO احترافية. معاينة مجانية قبل الدفع. تواصل معنا اليوم!" />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:locale" content="ar_KW" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="إتقان ويب | تصميم مواقع إلكترونية" />
+  <meta name="twitter:description" content="شريكك الرقمي الموثوق — تصميم احترافي، SEO متكامل، ومعاينة مجانية قبل الدفع." />
+  <meta name="twitter:image" content="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://api.ipify.org https://script.google.com 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://script.google.com https://api.ipify.org; frame-src 'none'; object-src 'none'; base-uri 'self';" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- ========== LOCAL BUSINESS SCHEMA (SEO) ========== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "إتقان ويب | Itqan Web",
+    "image": "logo.png",
+    "url": "https://www.instagram.com/itqan.w3b/",
+    "telephone": "+96566279897",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kuwait",
+      "addressCountry": "KW"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "23:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/itqan.w3b/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">إتقان ويب</div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Skip Link (إمكانية الوصول) -->
+  <a href="#main-content" class="skip-link">تخطى إلى المحتوى الرئيسي</a>
+
+  <!-- ========== PARTICLE BACKGROUND ========== -->
+  <canvas id="particle-bg"></canvas>
+
+  <div class="page-wrap" id="main-content">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo" aria-label="العودة للصفحة الرئيسية">
+        <img src="logo.png" class="logo-img" alt="إتقان ويب" />
+        <div class="logo-text">
+          <strong>إتقان ويب</strong>
+          <span>ITQAN WEB</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#offer">العروض</a></li>
+        <li><a href="#gallery">المنشورات</a></li>
+        <li><a href="#why">لماذا نحن</a></li>
+        <li><a href="#reviews">تقييمات</a></li>
+        <li class="nav-contact-group">
+          <a href="https://www.instagram.com/itqan.w3b/" target="_blank" class="nav-social-icon nav-ig" title="إنستقرام"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/96566279897" target="_blank" class="nav-social-icon nav-wa" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:66279897" class="nav-social-icon nav-tel" title="اتصال هاتفي"><i class="fa-solid fa-phone"></i></a>
+        </li>
+      </ul>
+      <button class="menu-toggle" aria-label="القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="main-shade-wrap">
+    <div class="main-shade"></div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <i class="fa-solid fa-code"></i>
+        نصنع واجهات المستقبل الرقمي
+      </div>
+      <h1>إتقان ويب: <span class="gold">شريك نجاحك</span> الرقمي!</h1>
+      <div class="hero-text-bg">
+        <p>
+          تصميم مواقع متكاملة، برمجة متاجر إلكترونية ذكية، وتهيئة مخصصة لمحركات البحث لضمان ظهور شفرة مشروعك في الصدارة دائماً.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <a href="https://wa.me/96566279897" target="_blank" class="btn btn-outline" aria-label="واتساب">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:66279897" class="btn btn-outline" aria-label="اتصال هاتفي">
+          <i class="fa-solid fa-phone-flip"></i>
+        </a>
+        <a href="#services" class="btn btn-outline services-btn" aria-label="اكتشف خدماتنا">خدماتنا</a>
+      </div>
+      <div class="hero-notice">
+        <i class="fa-solid fa-ban"></i>
+        <span>نعتذر عن القيام بأي عمل يخالف الشريعة الإسلامية</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-header-inner">
+          <span class="eyebrow">خدماتنا</span>
+          <h2>كل ما تحتاجه لتنطلق رقمياً</h2>
+          <p>نقدم لك باقة متكاملة من الخدمات الرقمية لتحويل فكرة مشروعك إلى منصة إلكترونية ناجحة.</p>
+        </div>
+      </div>
+      <div class="services-carousel" id="servicesCarousel">
+        <div class="services-list" id="servicesList"></div>
+        <div class="services-display spotglow" id="servicesDisplay">
+          <div class="sd-bg" id="sdBg"></div>
+          <div class="sd-icon" id="sdIcon"></div>
+          <div class="sd-body">
+            <h3 id="sdTitle"></h3>
+            <p class="sd-desc" id="sdDesc"></p>
+            <ul class="sd-benefits" id="sdBenefits"></ul>
+            <span class="sd-tag" id="sdTag"></span>
+          </div>
+          <div class="sd-counter" id="sdCounter"></div>
+          <div class="sd-indicators" id="sdIndicators"></div>
+          <button class="sd-nav sd-prev" aria-label="السابق"><i class="fa-solid fa-chevron-right"></i></button>
+          <button class="sd-nav sd-next" aria-label="التالي"><i class="fa-solid fa-chevron-left"></i></button>
+        </div>
+      </div>
+      <div class="services-mobile-grid" id="servicesMobileGrid"></div>
+    </div>
+  </section>
+
+  
+
+  <!-- ========== من نحن ========== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">من نحن</span>
+        <h2>شغفنا: <span class="gold">بناء حضورك الرقمي</span></h2>
+        <div class="about-text-bg">
+          <p>نحن فريق عمل في الكويت متخصص في التصميم الرقمي — نضع ثقتك في المقدمة ونبني لك موقعاً يعكس رؤيتك بكل احترافية وإتقان.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+
+        <div class="about-story fade-up">
+          <div class="about-story-inner spotglow">
+            <div class="about-icon-wrap">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3>وجهتك الرقمية الموثوقة</h3>
+            <p>
+              <strong>إتقان ويب</strong> هي وجهتك الموثوقة لبناء حضورك الرقمي. نؤمن بأن كل فكرة — صغيرة كانت أم كبيرة — تستحق موقعاً يعكس قيمتها الحقيقية ويُظهرها بأبهى صورة.
+            </p>
+            <p>
+              نبدأ كل تعاون معك <strong>بمعاينة مجانية قبل الدفع</strong>، لأن ثقتك هي أساس نجاحنا. شفافية تامة، جودة عالية، وشغف حقيقي بتقديم أفضل ما لدينا لمشروعك.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-stats-wrap fade-up">
+          <div class="about-stat-card spotglow">
+            <div class="about-stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <span class="stat-num">100%</span>
+            <span class="stat-label">عملاء راضون</span>
+          </div>
+          <div class="about-stat-card spotglow">
+            <div class="about-stat-icon"><i class="fa-solid fa-headset"></i></div>
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">دعم فني متواصل</span>
+          </div>
+          <div class="about-stat-card spotglow">
+            <div class="about-stat-icon"><i class="fa-solid fa-eye"></i></div>
+            <span class="stat-num">مجاني</span>
+            <span class="stat-label">معاينة قبل الدفع</span>
+          </div>
+          <div class="about-stat-card spotglow">
+            <div class="about-stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <span class="stat-num">الكويت</span>
+            <span class="stat-label">فريق محلي</span>
+          </div>
+        </div>
+
+        <div class="about-values fade-up">
+          <div class="about-value-item">
+            <div class="value-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4>الشفافية التامة</h4>
+              <p>لا رسوم مخفية، لا مفاجآت — نوضح كل التفاصيل قبل بداية العمل.</p>
+            </div>
+          </div>
+          <div class="about-value-item">
+            <div class="value-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+            <div>
+              <h4>التسليم السريع</h4>
+              <p>نلتزم بالمواعيد ونسلم مشاريع عالية الجودة في الوقت المحدد.</p>
+            </div>
+          </div>
+          <div class="about-value-item">
+            <div class="value-icon-wrap"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <div>
+              <h4>خدمة ما بعد التسليم</h4>
+              <p>علاقتنا لا تنتهي عند التسليم — نرافقك في كل خطوة بعد الإطلاق.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OFFER ========== -->
+  <section id="offer" class="section offer-section">
+    <div class="container">
+      <div class="offer-banner fade-up">
+        <div class="offer-content">
+          <span class="offer-badge"><i class="fa-solid fa-fire"></i> عرض حصري</span>
+          <h3>خصم 50% لأول 10 عملاء!</h3>
+          <p>أطلق موقعك الاحترافي اليوم واستفد من الخصم الخاص مع باقة المزايا المجانية: الدومين + الإيميل الرسمي + معاينة مجانية قبل الدفع.</p>
+        </div>
+        <div class="offer-actions">
+          <a href="tel:66279897" class="btn btn-white">
+            <i class="fa-solid fa-phone"></i> احجز باقتك الآن
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section id="gallery" class="section offer-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">المنشورات</span>
+        <h2>من إنستغرام</h2>
+        <p>نشارك أحدث مشاريعنا وتصاميمنا — تابعونا على <a href="https://www.instagram.com/itqan.w3b/" target="_blank" class="instagram-link">@itqan.w3b</a></p>
+      </div>
+      <div class="card-stack-wrap fade-up" id="cardStackWrap">
+        <div class="card-stack-stage" id="cardStackStage"></div>
+        <div class="cs-controls">
+          <button class="cs-btn cs-prev" aria-label="السابق"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="cs-dots" id="csDots"></div>
+          <button class="cs-btn cs-next" aria-label="التالي"><i class="fa-solid fa-chevron-left"></i></button>
+        </div>
+      </div>
+      <div class="gallery-footer fade-up"></div>
+    </div>
+  </section>
+  <!-- ========== WHY US ========== -->
+  <section id="why" class="section why-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">لماذا إتقان ويب؟</span>
+        <h2>مشروعك بدون موقع إلكتروني يخسر نصف عملائه</h2>
+        <p>نقدم لك أكثر من مجرد تصميم — نقدم لك شراكة رقمية متكاملة لنجاح أعمالك.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card spotglow fade-up fade-up-d1">
+          <div class="check"><i class="fa-solid fa-check"></i></div>
+          <h4>معاينة قبل الدفع</h4>
+          <p>نقدم لك نموذجاً كاملاً لمشروعك مجاناً لمعاينته والاطلاع عليه قبل أي التزام مالي.</p>
+        </div>
+
+        <div class="feature-card spotglow fade-up fade-up-d2">
+          <div class="check"><i class="fa-solid fa-check"></i></div>
+          <h4>توفير الإعلانات المكلفة</h4>
+          <p>من خلال الأرشفة التلقائية لمحركات البحث التي تجعل نشاطك يظهر بشكل طبيعي ومستمر.</p>
+        </div>
+
+        <div class="feature-card spotglow fade-up fade-up-d3">
+          <div class="check"><i class="fa-solid fa-check"></i></div>
+          <h4>دعم فني وتطوير مستمر</h4>
+          <p>نرافقك خطوة بخطوة لضمان إدارة احترافية ومستمرة لموقعك أو متجرك الإلكتروني.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEWS ========== -->
+  <section id="reviews" class="section offer-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">عملاء يثقون بنا</span>
+        <h2>تقييمات العملاء</h2>
+        <p>شاركنا رأيك بتجربتك — تقييمك يساعدنا نكون أفضل</p>
+      </div>
+      <div class="reviews-grid" id="reviewsGrid">
+        <div class="review-empty fade-up">لا توجد تقييمات بعد. كن أول من يقيم!</div>
+      </div>
+      <div class="review-add-wrap fade-up">
+        <button class="btn-review"><i class="fa-solid fa-star"></i> أضف تقييمك</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REVIEW MODAL ========== -->
+  <div class="review-modal-overlay" id="reviewModalOverlay">
+    <div class="review-modal">
+      <button class="modal-close">&times;</button>
+      <h3>أضف تقييمك</h3>
+      <p>شاركنا تجربتك مع إتقان ويب — رأيك يهمنا</p>
+      <div class="form-group">
+        <label>الاسم <span class="required-star">*</span></label>
+        <input type="text" id="reviewName" placeholder="مثال: أحمد محمد" maxlength="30" />
+        <div class="form-error" id="nameError">يرجى إدخال الاسم (2-30 حرف)</div>
+      </div>
+      <div class="form-group">
+        <label>رابط موقعك (اختياري)</label>
+        <input type="url" id="reviewSite" placeholder="https://example.com" maxlength="200" />
+      </div>
+      <div class="form-group">
+        <label>تعليقك (اختياري — حد أقصى 500 حرف)</label>
+        <textarea id="reviewComment" placeholder="شاركنا تفاصيل تجربتك مع إتقان ويب..." maxlength="500"></textarea>
+        <div class="form-error" id="commentError">التعليق لا يجب أن يحتوي على روابط</div>
+      </div>
+      <div class="form-group">
+        <label>التقييم <span class="required-star">*</span></label>
+        <div class="star-input" id="starInput">
+          <i class="fa-solid fa-star" data-val="1"></i>
+          <i class="fa-solid fa-star" data-val="2"></i>
+          <i class="fa-solid fa-star" data-val="3"></i>
+          <i class="fa-solid fa-star" data-val="4"></i>
+          <i class="fa-solid fa-star" data-val="5"></i>
+        </div>
+        <div class="form-error" id="starError">يرجى اختيار تقييم</div>
+      </div>
+      <!-- Honeypot (مخفي) -->
+      <input type="text" id="reviewHp" class="honeypot" tabindex="-1" autocomplete="off" />
+      <button class="btn-submit" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> إرسال التقييم</button>
+      <div id="submitStatus" class="submit-status"></div>
+    </div>
+  </div>
+
+  </div><!-- /main-shade-wrap -->
+
+  <!-- ========== PRE-FOOTER CTA ========== -->
+  <section class="pre-footer container fade-up">
+    <div class="pre-footer-card spotglow">
+      <div class="pre-footer-content">
+        <h3>هل أنت مستعد لتطوير مشروعك رقمياً؟</h3>
+        <p>تواصل معنا اليوم للحصول على استشارة مجانية ومعاينة لموقعك قبل الدفع!</p>
+      </div>
+      <div class="pre-footer-actions">
+        <a href="https://wa.me/96566279897" target="_blank" class="btn-gold">
+          <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
+        </a>
+        <a href="tel:66279897" class="btn btn-outline">
+          <i class="fa-solid fa-phone"></i> اتصل بنا
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a href="#" class="logo footer-logo" aria-label="العودة للصفحة الرئيسية">
+            <img src="logo.png" class="logo-img" alt="إتقان ويب" />
+            <div class="logo-text">
+              <strong>إتقان ويب</strong>
+              <span>ITQAN WEB</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">تصميم متطور، SEO متكامل، وإدارة خرائط ذكية — كل ما تحتاجه في مكان واحد.</p>
+          <div class="footer-tech">
+            <span>التقنيات المستخدمة</span>
+            <div class="tech-badges">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JS / ES6</span>
+              <span class="tech-badge">Three.js</span>
+              <span class="tech-badge">SEO</span>
+              <span class="tech-badge">Maps API</span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">خدماتنا</h4>
+          <ul class="footer-links">
+            <li><a href="#services"><i class="fa-solid fa-chevron-left"></i> تصميم مواقع</a></li>
+            <li><a href="#services"><i class="fa-solid fa-chevron-left"></i> تحسين محركات البحث</a></li>
+            <li><a href="#services"><i class="fa-solid fa-chevron-left"></i> إدارة خرائط جوجل</a></li>
+            <li><a href="#services"><i class="fa-solid fa-chevron-left"></i> حملات إعلانات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#why"><i class="fa-solid fa-chevron-left"></i> لماذا نحن</a></li>
+            <li><a href="#offer"><i class="fa-solid fa-chevron-left"></i> العروض</a></li>
+            <li><a href="#gallery"><i class="fa-solid fa-chevron-left"></i> المنشورات</a></li>
+            <li><a href="#reviews"><i class="fa-solid fa-chevron-left"></i> التقييمات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">تواصل معنا</h4>
+          <div class="footer-phone">
+            <i class="fa-solid fa-phone"></i> <a href="tel:66279897">+965 66279897</a>
+          </div>
+          <div class="footer-email">
+            <i class="fa-regular fa-envelope"></i> itqan.web@email.com
+          </div>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/itqan.w3b/" target="_blank" title="إنستقرام"><i class="fa-brands fa-instagram"></i></a>
+            <a href="tel:66279897" title="اتصل بنا"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/96566279897" target="_blank" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <div class="footer-callback-form">
+            <p>طلب اتصال سريع</p>
+            <form id="quickCallForm">
+              <div class="callback-input-wrap">
+                <input type="tel" id="quickPhone" placeholder="أدخل رقم هاتفك..." required maxlength="15" />
+                <button type="submit" aria-label="إرسال رقم الهاتف"><i class="fa-solid fa-paper-plane"></i></button>
+              </div>
+              <div id="quickStatus"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 إتقان ويب (Itqan Web). جميع الحقوق محفوظة.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING ACTIONS ========== -->
+  <div class="floating-actions">
+    <a href="https://wa.me/96566279897" target="_blank" class="float-btn float-wa" aria-label="واتساب">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:66279897" class="float-btn float-phone" aria-label="اتصال هاتفي">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+  <!-- ========== BACK TO TOP BUTTON ========== -->
+  <button id="backToTop" class="back-to-top" aria-label="العودة إلى الأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  </div><!-- /.page-wrap -->
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="js/three-bg.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/reviews.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

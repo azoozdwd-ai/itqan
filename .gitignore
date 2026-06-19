@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*.sublime-workspace
+
+# Temp
+*.log
+node_modules/
