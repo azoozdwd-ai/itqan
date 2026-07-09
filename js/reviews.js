@@ -100,8 +100,10 @@
     var cache = localStorage.getItem(STORAGE_KEY);
     var cached = cache ? JSON.parse(cache) : [];
 
-    // Show loading state
-    reviewsGrid.innerHTML = '<div class="review-loading"><i class="fa-solid fa-spinner fa-spin"></i> جاري تحميل التقييمات...</div>';
+    // Show cached reviews immediately (no loading spinner)
+    if (cached && cached.length) {
+      renderReviews(cached);
+    }
 
     if (SHEETS_URL && SHEETS_URL !== 'YOUR_WEB_APP_URL') {
       fetch(SHEETS_URL + '?t=' + Date.now())
@@ -110,13 +112,11 @@
           if (data.status === 'ok' && data.reviews && data.reviews.length) {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data.reviews));
             renderReviews(data.reviews);
-            return;
           }
-          renderReviews(cached);
         })
-        .catch(function() { renderReviews(cached); });
+        .catch(function() {});
     } else {
-      renderReviews(cached);
+      if (!cached || !cached.length) renderReviews(cached);
     }
   }
 
