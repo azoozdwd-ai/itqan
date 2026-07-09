@@ -105,16 +105,26 @@
 
     if (SHEETS_URL && SHEETS_URL !== 'YOUR_WEB_APP_URL') {
       fetch(SHEETS_URL + '?t=' + Date.now())
-        .then(function(res) { return res.json(); })
+        .then(function(res) {
+          if (!res.ok) { console.error('GAS response not ok:', res.status); }
+          return res.json();
+        })
         .then(function(data) {
+          console.log('GAS response:', data);
           if (data.status === 'ok' && data.reviews && data.reviews.length) {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data.reviews));
             renderReviews(data.reviews);
             return;
           }
+          if (data.status === 'ok' && (!data.reviews || !data.reviews.length)) {
+            console.log('GAS returned ok but no reviews');
+          }
           renderReviews(cached);
         })
-        .catch(function() { renderReviews(cached); });
+        .catch(function(err) {
+          console.error('Fetch error:', err);
+          reviewsGrid.innerHTML = '<div class="review-empty" style="color:#ff6b6b">⚠️ فشل تحميل التقييمات: ' + err.message + '</div>';
+        });
     } else {
       renderReviews(cached);
     }
