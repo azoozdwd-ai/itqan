@@ -63,8 +63,6 @@
       stars += '<i class="fa-solid fa-star"></i>';
     }
 
-    var meta = r.date ? r.date.substring(0, 10) : '';
-
     var siteHtml = '';
     if (safeSite) {
       var displaySite = safeSite.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
@@ -83,7 +81,6 @@
         '<div class="review-avatar">' + safeName.charAt(0) + '</div>' +
         '<div class="review-author-info">' +
           '<div class="review-name">' + safeName + '</div>' +
-          '<div class="review-meta">' + meta + '</div>' +
         '</div>' +
       '</div>';
 
