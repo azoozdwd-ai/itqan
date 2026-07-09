@@ -158,53 +158,6 @@ textarea:focus-visible {
 }
 #services .section-header { margin-bottom:32px; }
 
-/* ========== PRELOADER ========== */
-.preloader {
-  position:fixed;
-  inset:0;
-  z-index:99999;
-  background:radial-gradient(ellipse at 30% 50%, #0f2240 0%, #070f18 100%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:opacity 0.6s ease, visibility 0.6s ease;
-}
-.preloader.hidden {
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-.preloader-content {
-  text-align:center;
-}
-.preloader-logo {
-  font-size:1.5rem;
-  font-weight:900;
-  background:linear-gradient(135deg,var(--gold),#fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  margin-bottom:24px;
-}
-.preloader-bar {
-  width:200px;
-  height:3px;
-  background:rgba(223,192,115,0.1);
-  border-radius:2px;
-  overflow:hidden;
-  margin:0 auto;
-}
-.preloader-fill {
-  width:0%;
-  height:100%;
-  background:var(--gold);
-  border-radius:2px;
-  animation:preloadFill 1.2s ease forwards;
-}
-@keyframes preloadFill {
-  to { width:100%; }
-}
-
 /* ========== NAVBAR ========== */
 nav {
   position:sticky; top:0; z-index:100;

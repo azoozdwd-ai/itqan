@@ -1,14 +1,4 @@
 (function() {
-  // 0. Preloader
-  var preloader = document.getElementById('preloader');
-  if (preloader) {
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        preloader.classList.add('hidden');
-      }, 600);
-    });
-  }
-
   // 1. Menu Toggle (navigation)
   var menuToggle = document.querySelector('.menu-toggle');
   var navLinks = document.getElementById('navLinks');
