@@ -125,9 +125,10 @@
 
   var clock = new THREE.Clock();
   var frameCount = 0;
+  var animId;
 
   function animate() {
-    requestAnimationFrame(animate);
+    animId = requestAnimationFrame(animate);
     var t = clock.getElapsedTime();
     frameCount++;
 
@@ -200,6 +201,11 @@
     renderer.render(scene, camera);
   }
   animate();
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) cancelAnimationFrame(animId);
+    else animate();
+  });
 
   window.addEventListener('resize', function() {
     camera.aspect = window.innerWidth / window.innerHeight;
