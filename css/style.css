@@ -1305,6 +1305,34 @@ nav.scrolled .container {
   display:none;
 }
 
+/* ---- Confirmation modal ---- */
+.confirm-modal {
+  text-align:center;
+  padding:40px 32px;
+}
+.confirm-icon {
+  font-size:3.4rem;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:18px;
+}
+.confirm-icon i {
+  filter:drop-shadow(0 0 24px rgba(223,192,115,0.45));
+}
+.confirm-modal h3 {
+  font-size:1.35rem;
+  margin-bottom:8px;
+}
+.confirm-modal p {
+  font-size:0.92rem;
+  color:rgba(240,244,248,0.6);
+  line-height:1.9;
+  margin-bottom:28px;
+}
+.confirm-modal .btn-submit {
+  width:100%;
+}
+
 @media (max-width:768px) {
   .reviews-static-grid { grid-template-columns:repeat(2,1fr); gap:14px; }
 }

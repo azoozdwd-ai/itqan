@@ -140,8 +140,12 @@
 
   function trapFocus(e) {
     var overlay = document.getElementById('reviewModalOverlay');
-    if (!overlay.classList.contains('open')) return;
-    var focusable = getFocusable(overlay);
+    var confirmOverlay = document.getElementById('confirmModalOverlay');
+    var active = null;
+    if (overlay && overlay.classList.contains('open')) active = overlay;
+    else if (confirmOverlay && confirmOverlay.classList.contains('open')) active = confirmOverlay;
+    if (!active) return;
+    var focusable = getFocusable(active);
     if (!focusable.length) return;
     var first = focusable[0];
     var last = focusable[focusable.length - 1];
@@ -197,6 +201,22 @@
     if (lastFocusedEl) lastFocusedEl.focus();
   };
 
+  window.openConfirmModal = function() {
+    lastFocusedEl = document.activeElement;
+    document.getElementById('confirmModalOverlay').classList.add('open');
+    document.addEventListener('keydown', trapFocus);
+    setTimeout(function() {
+      var b = document.getElementById('confirmBtn');
+      if (b) b.focus();
+    }, 50);
+  };
+
+  window.closeConfirmModal = function() {
+    document.getElementById('confirmModalOverlay').classList.remove('open');
+    document.removeEventListener('keydown', trapFocus);
+    if (lastFocusedEl) lastFocusedEl.focus();
+  };
+
   // ---- Submit ----
   window.submitReview = function() {
     var name = document.getElementById('reviewName').value.trim();
@@ -247,6 +267,7 @@
       );
       closeReviewModal();
       window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
+      window.openConfirmModal();
       btn.disabled = false;
       btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> إرسال التقييم';
       return;
@@ -283,7 +304,7 @@
         .then(function(data) {
           if (data && data.status === 'ok') {
             closeReviewModal();
-            showStatus('تم استلام تقييمك، سيظهر بعد الموافقة ✅', true);
+            window.openConfirmModal();
           } else {
             btn.disabled = false;
             btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> إرسال التقييم';
@@ -308,7 +329,7 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
       closeReviewModal();
       renderReviews(reviews);
-      showStatus('تم إضافة تقييمك ✅', true);
+      window.openConfirmModal();
       btn.disabled = false;
       btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> إرسال التقييم';
     }
@@ -348,6 +369,22 @@
   if (reviewModalOverlay) {
     reviewModalOverlay.addEventListener('click', function(e) {
       if (e.target === reviewModalOverlay) window.closeReviewModal();
+    });
+  }
+
+  // ---- Confirmation modal events ----
+  var confirmModalOverlay = document.getElementById('confirmModalOverlay');
+  var confirmClose = document.getElementById('confirmClose');
+  var confirmBtn = document.getElementById('confirmBtn');
+  if (confirmClose) {
+    confirmClose.addEventListener('click', window.closeConfirmModal);
+  }
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', window.closeConfirmModal);
+  }
+  if (confirmModalOverlay) {
+    confirmModalOverlay.addEventListener('click', function(e) {
+      if (e.target === confirmModalOverlay) window.closeConfirmModal();
     });
   }
 
